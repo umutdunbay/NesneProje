@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace NesneProje
 {
-    public partial class Form1 : Form
+    public partial class premiumKullanici : Form
     {
-        public Form1()
+        public premiumKullanici()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
