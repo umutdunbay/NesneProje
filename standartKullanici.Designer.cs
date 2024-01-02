@@ -39,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cikisYapbtn = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +48,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(-3, 0);
             this.tabControl1.Name = "tabControl1";
@@ -153,6 +155,15 @@
             this.tabPage3.Text = "Kullanıcı";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(796, 420);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Film Listesi";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // standartKullanici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -181,5 +192,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
     }
 }
