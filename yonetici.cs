@@ -16,5 +16,10 @@ namespace NesneProje
         {
             InitializeComponent();
         }
+
+        private void yonetici_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
