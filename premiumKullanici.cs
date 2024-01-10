@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace NesneProje
 {
-    public partial class premiumKullanici : Form
+    public class PremiumKullanici : Kullanicilar
     {
-        public premiumKullanici()
+        public PremiumKullanici(string _kullaniciAdi, string _sifre, string _ad, string _soyAd, string _tcNo, DateTime _dogumTarihi, string _cinsiyet, string _uyelikTuru) : base(_kullaniciAdi, _sifre, _ad, _soyAd, _tcNo, _dogumTarihi, _cinsiyet, _uyelikTuru)
         {
-            InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public override decimal uyelikUcretiHesapla()
         {
-
+            return (100 * 1.25m);
         }
     }
 }
