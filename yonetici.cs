@@ -1,25 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace NesneProje
 {
-    public partial class yonetici : Form
+    public class Yonetici
     {
-        public yonetici()
-        {
-            InitializeComponent();
-        }
-
-        private void yonetici_Load(object sender, EventArgs e)
-        {
-
-        }
+        public string kullaniciAdi { get; set; }
+        public string sifre { get; set; }
     }
 }

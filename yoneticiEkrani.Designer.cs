@@ -1,6 +1,6 @@
 ﻿namespace NesneProje
 {
-    partial class yonetici
+    partial class yoneticiEkrani
     {
         /// <summary>
         /// Required designer variable.
