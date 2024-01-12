@@ -47,7 +47,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.yoneticiEkraniText = new System.Windows.Forms.TextBox();
+            this.yoneticiSifreText = new System.Windows.Forms.TextBox();
             this.yoneticiAdiText = new System.Windows.Forms.TextBox();
             this.kullaniciSifreText = new System.Windows.Forms.TextBox();
             this.kullaniciAdiText = new System.Windows.Forms.TextBox();
@@ -59,10 +59,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -79,20 +79,17 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.yoneticiKayitTamamlaBtn = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -101,6 +98,7 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -128,7 +126,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Ana Ekran";
             this.tabPage4.UseVisualStyleBackColor = true;
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // pictureBox1
             // 
@@ -180,6 +177,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.yoneticiKayitBtn);
             this.tabPage1.Controls.Add(this.kullaniciKayitBtn);
             this.tabPage1.Controls.Add(this.label11);
@@ -189,7 +187,7 @@
             this.tabPage1.Controls.Add(this.yoneticiGirisBtn);
             this.tabPage1.Controls.Add(this.kullaniciGirisBtn);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.yoneticiEkraniText);
+            this.tabPage1.Controls.Add(this.yoneticiSifreText);
             this.tabPage1.Controls.Add(this.yoneticiAdiText);
             this.tabPage1.Controls.Add(this.kullaniciSifreText);
             this.tabPage1.Controls.Add(this.kullaniciAdiText);
@@ -207,16 +205,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Giriş Yap";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // yoneticiKayitBtn
             // 
-            this.yoneticiKayitBtn.Location = new System.Drawing.Point(525, 366);
+            this.yoneticiKayitBtn.Location = new System.Drawing.Point(605, 396);
             this.yoneticiKayitBtn.Name = "yoneticiKayitBtn";
             this.yoneticiKayitBtn.Size = new System.Drawing.Size(75, 23);
             this.yoneticiKayitBtn.TabIndex = 19;
             this.yoneticiKayitBtn.Text = "Kayıt Ol";
             this.yoneticiKayitBtn.UseVisualStyleBackColor = true;
+            this.yoneticiKayitBtn.Click += new System.EventHandler(this.yoneticiKayitBtn_Click);
             // 
             // kullaniciKayitBtn
             // 
@@ -226,11 +224,12 @@
             this.kullaniciKayitBtn.TabIndex = 18;
             this.kullaniciKayitBtn.Text = "Kayıt Ol";
             this.kullaniciKayitBtn.UseVisualStyleBackColor = true;
+            this.kullaniciKayitBtn.Click += new System.EventHandler(this.kullaniciKayitBtn_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(461, 371);
+            this.label11.Location = new System.Drawing.Point(541, 401);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(58, 13);
             this.label11.TabIndex = 17;
@@ -239,7 +238,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(423, 341);
+            this.label10.Location = new System.Drawing.Point(541, 370);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(102, 13);
             this.label10.TabIndex = 16;
@@ -248,7 +247,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(32, 371);
+            this.label9.Location = new System.Drawing.Point(26, 370);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(102, 13);
             this.label9.TabIndex = 15;
@@ -265,27 +264,29 @@
             // 
             // yoneticiGirisBtn
             // 
-            this.yoneticiGirisBtn.Location = new System.Drawing.Point(558, 261);
+            this.yoneticiGirisBtn.Location = new System.Drawing.Point(550, 201);
             this.yoneticiGirisBtn.Name = "yoneticiGirisBtn";
             this.yoneticiGirisBtn.Size = new System.Drawing.Size(75, 23);
             this.yoneticiGirisBtn.TabIndex = 13;
             this.yoneticiGirisBtn.Text = "Giriş Yap";
             this.yoneticiGirisBtn.UseVisualStyleBackColor = true;
+            this.yoneticiGirisBtn.Click += new System.EventHandler(this.yoneticiGirisBtn_Click);
             // 
             // kullaniciGirisBtn
             // 
-            this.kullaniciGirisBtn.Location = new System.Drawing.Point(161, 331);
+            this.kullaniciGirisBtn.Location = new System.Drawing.Point(161, 269);
             this.kullaniciGirisBtn.Name = "kullaniciGirisBtn";
             this.kullaniciGirisBtn.Size = new System.Drawing.Size(75, 23);
             this.kullaniciGirisBtn.TabIndex = 12;
             this.kullaniciGirisBtn.Text = "Giriş Yap";
             this.kullaniciGirisBtn.UseVisualStyleBackColor = true;
+            this.kullaniciGirisBtn.Click += new System.EventHandler(this.kullaniciGirisBtn_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(161, 261);
+            this.groupBox1.Location = new System.Drawing.Point(136, 188);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(136, 54);
             this.groupBox1.TabIndex = 11;
@@ -313,32 +314,31 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Standart Kullanıcı";
             this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // yoneticiEkraniText
+            // yoneticiSifreText
             // 
-            this.yoneticiEkraniText.Location = new System.Drawing.Point(544, 205);
-            this.yoneticiEkraniText.Name = "yoneticiEkraniText";
-            this.yoneticiEkraniText.Size = new System.Drawing.Size(100, 20);
-            this.yoneticiEkraniText.TabIndex = 10;
+            this.yoneticiSifreText.Location = new System.Drawing.Point(525, 144);
+            this.yoneticiSifreText.Name = "yoneticiSifreText";
+            this.yoneticiSifreText.Size = new System.Drawing.Size(100, 20);
+            this.yoneticiSifreText.TabIndex = 10;
             // 
             // yoneticiAdiText
             // 
-            this.yoneticiAdiText.Location = new System.Drawing.Point(544, 144);
+            this.yoneticiAdiText.Location = new System.Drawing.Point(525, 83);
             this.yoneticiAdiText.Name = "yoneticiAdiText";
             this.yoneticiAdiText.Size = new System.Drawing.Size(100, 20);
             this.yoneticiAdiText.TabIndex = 9;
             // 
             // kullaniciSifreText
             // 
-            this.kullaniciSifreText.Location = new System.Drawing.Point(161, 205);
+            this.kullaniciSifreText.Location = new System.Drawing.Point(136, 144);
             this.kullaniciSifreText.Name = "kullaniciSifreText";
             this.kullaniciSifreText.Size = new System.Drawing.Size(100, 20);
             this.kullaniciSifreText.TabIndex = 8;
             // 
             // kullaniciAdiText
             // 
-            this.kullaniciAdiText.Location = new System.Drawing.Point(161, 141);
+            this.kullaniciAdiText.Location = new System.Drawing.Point(136, 80);
             this.kullaniciAdiText.Name = "kullaniciAdiText";
             this.kullaniciAdiText.Size = new System.Drawing.Size(100, 20);
             this.kullaniciAdiText.TabIndex = 7;
@@ -346,7 +346,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(461, 205);
+            this.label7.Location = new System.Drawing.Point(442, 144);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(28, 13);
             this.label7.TabIndex = 6;
@@ -355,7 +355,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(461, 144);
+            this.label6.Location = new System.Drawing.Point(442, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 5;
@@ -364,7 +364,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(32, 272);
+            this.label5.Location = new System.Drawing.Point(7, 188);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 4;
@@ -373,7 +373,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(100, 205);
+            this.label4.Location = new System.Drawing.Point(75, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 3;
@@ -382,7 +382,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(64, 144);
+            this.label3.Location = new System.Drawing.Point(39, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 2;
@@ -391,7 +391,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(555, 48);
+            this.label2.Location = new System.Drawing.Point(522, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 1;
@@ -400,7 +400,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(165, 48);
+            this.label1.Location = new System.Drawing.Point(133, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 0;
@@ -408,10 +408,12 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.radioButton4);
             this.tabPage2.Controls.Add(this.radioButton3);
-            this.tabPage2.Controls.Add(this.textBox7);
             this.tabPage2.Controls.Add(this.textBox6);
             this.tabPage2.Controls.Add(this.textBox5);
             this.tabPage2.Controls.Add(this.textBox4);
@@ -434,6 +436,17 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Kullanıcı Kayıt Ekranı";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Erkek",
+            "Kadın"});
+            this.comboBox1.Location = new System.Drawing.Point(162, 268);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(102, 21);
+            this.comboBox1.TabIndex = 20;
             // 
             // dataGridView1
             // 
@@ -464,13 +477,6 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Standart Kullanıcı";
             this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(162, 268);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 16;
             // 
             // textBox6
             // 
@@ -513,11 +519,10 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 10;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // kullaniciKayitTamamlaBtn
             // 
-            this.kullaniciKayitTamamlaBtn.Location = new System.Drawing.Point(359, 350);
+            this.kullaniciKayitTamamlaBtn.Location = new System.Drawing.Point(162, 350);
             this.kullaniciKayitTamamlaBtn.Name = "kullaniciKayitTamamlaBtn";
             this.kullaniciKayitTamamlaBtn.Size = new System.Drawing.Size(161, 34);
             this.kullaniciKayitTamamlaBtn.TabIndex = 9;
@@ -599,20 +604,14 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.textBox9);
-            this.tabPage3.Controls.Add(this.textBox10);
-            this.tabPage3.Controls.Add(this.textBox11);
-            this.tabPage3.Controls.Add(this.textBox12);
+            this.tabPage3.Controls.Add(this.button3);
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Controls.Add(this.textBox13);
             this.tabPage3.Controls.Add(this.textBox14);
-            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.yoneticiKayitTamamlaBtn);
             this.tabPage3.Controls.Add(this.label21);
             this.tabPage3.Controls.Add(this.label22);
-            this.tabPage3.Controls.Add(this.label23);
-            this.tabPage3.Controls.Add(this.label25);
-            this.tabPage3.Controls.Add(this.label26);
-            this.tabPage3.Controls.Add(this.label27);
-            this.tabPage3.Controls.Add(this.label28);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(795, 426);
@@ -620,61 +619,42 @@
             this.tabPage3.Text = "Yönetici Kayıt Ekranı";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // textBox9
+            // dataGridView2
             // 
-            this.textBox9.Location = new System.Drawing.Point(127, 226);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 24;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(127, 185);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 23;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(127, 146);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 22;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(127, 103);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(102, 20);
-            this.textBox12.TabIndex = 21;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(332, 47);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(410, 199);
+            this.dataGridView2.TabIndex = 25;
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(127, 68);
+            this.textBox13.Location = new System.Drawing.Point(139, 130);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(100, 20);
             this.textBox13.TabIndex = 20;
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(127, 37);
+            this.textBox14.Location = new System.Drawing.Point(139, 161);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(100, 20);
             this.textBox14.TabIndex = 19;
             // 
-            // button1
+            // yoneticiKayitTamamlaBtn
             // 
-            this.button1.Location = new System.Drawing.Point(354, 348);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 34);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Kaydı Tamamla";
-            this.button1.UseVisualStyleBackColor = true;
+            this.yoneticiKayitTamamlaBtn.Location = new System.Drawing.Point(105, 212);
+            this.yoneticiKayitTamamlaBtn.Name = "yoneticiKayitTamamlaBtn";
+            this.yoneticiKayitTamamlaBtn.Size = new System.Drawing.Size(161, 34);
+            this.yoneticiKayitTamamlaBtn.TabIndex = 18;
+            this.yoneticiKayitTamamlaBtn.Text = "Kaydı Tamamla";
+            this.yoneticiKayitTamamlaBtn.UseVisualStyleBackColor = true;
+            this.yoneticiKayitTamamlaBtn.Click += new System.EventHandler(this.yoneticiKayitTamamlaBtn_Click);
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(90, 71);
+            this.label21.Location = new System.Drawing.Point(102, 161);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(31, 13);
             this.label21.TabIndex = 17;
@@ -683,56 +663,60 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(54, 40);
+            this.label22.Location = new System.Drawing.Point(66, 130);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(67, 13);
             this.label22.TabIndex = 16;
             this.label22.Text = "Kullanıcı Adı:";
             // 
-            // label23
+            // button1
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(62, 146);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(59, 13);
-            this.label23.TabIndex = 15;
-            this.label23.Text = "Soy Adınız:";
+            this.button1.Location = new System.Drawing.Point(443, 350);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 44);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Giriş Yap Ekranı";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label25
+            // button2
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(63, 269);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(58, 13);
-            this.label25.TabIndex = 13;
-            this.label25.Text = "Cinsiyetiniz";
+            this.button2.Location = new System.Drawing.Point(497, 345);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(140, 44);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "Giriş Yap Ekranı";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // label26
+            // button3
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(38, 226);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(83, 13);
-            this.label26.TabIndex = 12;
-            this.label26.Text = "Doğum Tarihiniz";
+            this.button3.Location = new System.Drawing.Point(198, 345);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(140, 44);
+            this.button3.TabIndex = 27;
+            this.button3.Text = "Ana Sayfa";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label27
+            // button4
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(17, 185);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(104, 13);
-            this.label27.TabIndex = 11;
-            this.label27.Text = "TC Kimlik Numaranız";
+            this.button4.Location = new System.Drawing.Point(609, 350);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(140, 44);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "Ana Sayfa";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label28
+            // button5
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(83, 103);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(38, 13);
-            this.label28.TabIndex = 10;
-            this.label28.Text = "Adınız:";
+            this.button5.Location = new System.Drawing.Point(307, 370);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(140, 44);
+            this.button5.TabIndex = 23;
+            this.button5.Text = "Ana Sayfa";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // anaEkran
             // 
@@ -756,6 +740,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -770,7 +755,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox yoneticiEkraniText;
+        private System.Windows.Forms.TextBox yoneticiSifreText;
         private System.Windows.Forms.TextBox yoneticiAdiText;
         private System.Windows.Forms.TextBox kullaniciSifreText;
         private System.Windows.Forms.TextBox kullaniciAdiText;
@@ -802,7 +787,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
@@ -810,22 +794,20 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button kullaniciKayitTamamlaBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button yoneticiKayitTamamlaBtn;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button5;
     }
 }

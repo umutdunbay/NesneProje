@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NesneProje
 {
-    public partial class premiumKullanici : Form
+    public partial class premiumKullaniciEkrani : Form
     {
-        public premiumKullanici()
+        public premiumKullaniciEkrani()
         {
             InitializeComponent();
         }
