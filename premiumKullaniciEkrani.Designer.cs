@@ -1,6 +1,6 @@
 ﻿namespace NesneProje
 {
-    partial class premiumKullanici
+    partial class premiumKullaniciEkrani
     {
         /// <summary>
         /// Required designer variable.
@@ -192,14 +192,14 @@
             this.tabPage4.Text = "Kullanıcı";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // premiumKullanici
+            // premiumKullaniciEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "premiumKullanici";
+            this.Name = "premiumKullaniciEkrani";
             this.Text = "premiumKullanici";
             this.Load += new System.EventHandler(this.premiumKullanici_Load);
             this.tabControl1.ResumeLayout(false);
