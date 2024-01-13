@@ -191,7 +191,7 @@ namespace NesneProje
             {
                 if (uyelikTuru == "Standart")
                 {
-                    standartKullaniciEkrani standartForm = new standartKullaniciEkrani();
+                    standartKullaniciEkrani standartForm = new standartKullaniciEkrani(kullaniciAdi);
                     this.Hide();
                     standartForm.Show();
                     
