@@ -36,6 +36,7 @@
             this.girisEkraniBtn = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.yoneticiKayitBtn = new System.Windows.Forms.Button();
             this.kullaniciKayitBtn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -59,6 +60,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -79,17 +82,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.yoneticiKayitTamamlaBtn = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -205,6 +205,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Giriş Yap";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(307, 370);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(140, 44);
+            this.button5.TabIndex = 23;
+            this.button5.Text = "Ana Sayfa";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // yoneticiKayitBtn
             // 
@@ -437,6 +446,26 @@
             this.tabPage2.Text = "Kullanıcı Kayıt Ekranı";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(609, 350);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(140, 44);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "Ana Sayfa";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(443, 350);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 44);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Giriş Yap Ekranı";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -619,6 +648,26 @@
             this.tabPage3.Text = "Yönetici Kayıt Ekranı";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(198, 345);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(140, 44);
+            this.button3.TabIndex = 27;
+            this.button3.Text = "Ana Sayfa";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(497, 345);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(140, 44);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "Giriş Yap Ekranı";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -669,55 +718,6 @@
             this.label22.TabIndex = 16;
             this.label22.Text = "Kullanıcı Adı:";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(443, 350);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 44);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Giriş Yap Ekranı";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(497, 345);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 44);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Giriş Yap Ekranı";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(198, 345);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 44);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "Ana Sayfa";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(609, 350);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(140, 44);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Ana Sayfa";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(307, 370);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(140, 44);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "Ana Sayfa";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // anaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -725,7 +725,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "anaEkran";
-            this.Text = "anaEkran";
+            this.Text = "Patso Film";
             this.Load += new System.EventHandler(this.anaEkran_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);

@@ -43,8 +43,6 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.bilgiGuncelleBtn = new System.Windows.Forms.Button();
@@ -60,6 +58,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -109,6 +108,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "İzleme Listesine Ekle";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -229,8 +229,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button4);
-            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.bilgiGuncelleBtn);
@@ -254,24 +253,6 @@
             this.tabPage3.Text = "Kullanıcı Bilgileri";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(424, 110);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Ekle";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(341, 115);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 13);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Yeni Bilgi Ekle:";
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(424, 187);
@@ -280,6 +261,7 @@
             this.button3.TabIndex = 20;
             this.button3.Text = "Sil";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label13
             // 
@@ -292,12 +274,13 @@
             // 
             // bilgiGuncelleBtn
             // 
-            this.bilgiGuncelleBtn.Location = new System.Drawing.Point(283, 37);
+            this.bilgiGuncelleBtn.Location = new System.Drawing.Point(424, 152);
             this.bilgiGuncelleBtn.Name = "bilgiGuncelleBtn";
-            this.bilgiGuncelleBtn.Size = new System.Drawing.Size(68, 23);
+            this.bilgiGuncelleBtn.Size = new System.Drawing.Size(75, 23);
             this.bilgiGuncelleBtn.TabIndex = 17;
             this.bilgiGuncelleBtn.Text = "Güncelle";
             this.bilgiGuncelleBtn.UseVisualStyleBackColor = true;
+            this.bilgiGuncelleBtn.Click += new System.EventHandler(this.bilgiGuncelleBtn_Click_1);
             // 
             // textBox5
             // 
@@ -403,6 +386,15 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Adınız:";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(296, 149);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(122, 26);
+            this.label15.TabIndex = 40;
+            this.label15.Text = "Yeni Bilgi Ekle  / \r\nVar Olan Bilgiyi Güncelle\r\n";
+            // 
             // standartKullaniciEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,7 +403,7 @@
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "standartKullaniciEkrani";
-            this.Text = "standartKullanici";
+            this.Text = "Patso Film - Standart";
             this.Load += new System.EventHandler(this.standartKullaniciEkrani_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -454,9 +446,8 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button bilgiGuncelleBtn;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
     }
 }

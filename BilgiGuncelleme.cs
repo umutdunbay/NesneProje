@@ -8,24 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace NesneProje
 {
-    public partial class standartKullaniciEkrani : Form
+    public partial class BilgiGuncelleme : Form
     {
-        
         private string baglantiString = "Host=localhost;Port=5432;Database=Film Kütüphanesi;user ID=postgres;password=Vipedmap1";
 
-        private string kullaniciAdi;
-        private string uyelikDurumu;
-        
-        public standartKullaniciEkrani(string kullaniciAdi)
+        string kAdi;
+
+        public BilgiGuncelleme(string _kAdi)
         {
             InitializeComponent();
-            this.kullaniciAdi = kullaniciAdi;
+            kAdi = _kAdi;
         }
 
-        private void standartKullaniciEkrani_Load(object sender, EventArgs e)
+        private void BilgiGuncelleme_Load(object sender, EventArgs e)
         {
             using (var baglanti = new NpgsqlConnection(baglantiString))
             {
@@ -36,7 +35,7 @@ namespace NesneProje
                 using (var komut = new NpgsqlCommand(sorgu, baglanti))
                 {
                     // Burada uygun kullaniciadi değerini belirleyerek sorguyu çalıştırabilirsiniz.
-                    komut.Parameters.AddWithValue("@kullaniciadi", kullaniciAdi);
+                    komut.Parameters.AddWithValue("@kullaniciadi", kAdi);
 
                     using (var reader = komut.ExecuteReader())
                     {
@@ -58,67 +57,20 @@ namespace NesneProje
                 }
 
                 baglanti.Close();
-
-                baglanti.Open();
-
-                string sorgu2 = "SELECT uyelikturu FROM kullanicilar WHERE kullaniciadi = @kullaniciadi";
-
-                using (var komut = new NpgsqlCommand(sorgu2, baglanti))
-                {
-                    komut.Parameters.AddWithValue("@kullaniciadi", kullaniciAdi);
-
-                    object result = komut.ExecuteScalar();
-
-                    if (result != null)
-                    {
-                        uyelikDurumu = result.ToString();
-                    }
-                    else
-                    {
-                        // Kullanıcı bulunamadı veya uyelikturu bilgisi yoksa uygun bir hata işlemi ekleyebilirsiniz.
-                    }
-                }
-                linkLabel1.Text = uyelikDurumu;
-                baglanti.Close();
             }
-        }
-
-        private void hesabaGitmebtn_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tabPage3;
-        }
-
-        private void cikisYapbtn_Click(object sender, EventArgs e)
-        {
-            anaEkran anaEkranForm = new anaEkran();
-            anaEkranForm.Show();
-            this.Close();
-        }
-
-        private void filmPagebtn_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tabPage2;
-        }
-
-        private void bilgiGuncelleBtn_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void bilgiGuncelleBtn_Click_1(object sender, EventArgs e)
-        {
-            BilgiGuncelleme bilgiGuncellemeForm = new BilgiGuncelleme(kullaniciAdi);
-            bilgiGuncellemeForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tabPage4;
-        }
+            // Kullanıcıdan alınan değerleri TextBox'lar üzerinden al
+            string yeniIsim = textBox1.Text;
+            string yeniSoyisim = textBox2.Text;
+            string yeniTcNo = textBox3.Text;
+            DateTime yeniDogumTarihi = Convert.ToDateTime( textBox4.Text);
+            string yeniCinsiyet = textBox5.Text;
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string skullaniciAdi = kullaniciAdi;
+            // Kullanıcı adını belirle (bu değeri uygun bir şekilde almalısınız)
+            string kullaniciAdi = kAdi;
 
             try
             {
@@ -129,25 +81,27 @@ namespace NesneProje
                 {
                     baglanti.Open();
 
-                    // Kullanıcıya ait tüm verileri sil
-                    string sorgu = "DELETE FROM kullanicilar WHERE kullaniciadi = @q1";
+                    // Kullanıcı bilgilerini güncelle
+                    string sorgu = "UPDATE kullanicilar SET isim = @p1, soyisim = @p2, tcno = @p3, dogumtarihi = @p4, cinsiyet = @p5 WHERE kullaniciadi = @p6";
 
                     using (NpgsqlCommand komut = new NpgsqlCommand(sorgu, baglanti))
                     {
-                        komut.Parameters.AddWithValue("@q1", skullaniciAdi);
+                        komut.Parameters.AddWithValue("@p1", yeniIsim);
+                        komut.Parameters.AddWithValue("@p2", yeniSoyisim);
+                        komut.Parameters.AddWithValue("@p3", yeniTcNo);
+                        komut.Parameters.AddWithValue("@p4", yeniDogumTarihi);
+                        komut.Parameters.AddWithValue("@p5", yeniCinsiyet);
+                        komut.Parameters.AddWithValue("@p6", kullaniciAdi);
 
                         int etkilenenSatirSayisi = komut.ExecuteNonQuery();
 
                         if (etkilenenSatirSayisi > 0)
                         {
-                            MessageBox.Show("Hesap başarıyla silindi.");
-                            anaEkran anaEkranForm = new anaEkran();
-                            anaEkranForm.Show();
-                            this.Close();
+                            MessageBox.Show("Kullanıcı bilgileri başarıyla güncellendi.");
                         }
                         else
                         {
-                            MessageBox.Show("Hesap silinirken bir hata oluştu.");
+                            MessageBox.Show("Kullanıcı bilgileri güncellenirken bir hata oluştu.");
                         }
                     }
                 }
@@ -156,6 +110,8 @@ namespace NesneProje
             {
                 MessageBox.Show($"Hata: {ex.Message}");
             }
+
+            this.Hide();
         }
     }
 }

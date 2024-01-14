@@ -198,7 +198,7 @@ namespace NesneProje
                 }
                 else if (uyelikTuru == "Premium")
                 {
-                    premiumKullaniciEkrani premiumForm = new premiumKullaniciEkrani();
+                    premiumKullaniciEkrani premiumForm = new premiumKullaniciEkrani(kullaniciAdi);
                     this.Hide();
                     premiumForm.Show();
                     
