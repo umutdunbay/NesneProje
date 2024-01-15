@@ -18,6 +18,7 @@ namespace NesneProje
 
         private string kullaniciAdi;
         private string uyelikDurumu;
+
         
         public standartKullaniciEkrani(string kullaniciAdi)
         {
@@ -156,6 +157,12 @@ namespace NesneProje
             {
                 MessageBox.Show($"Hata: {ex.Message}");
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            UyelikDegistir uyelikDegistir = new UyelikDegistir(kullaniciAdi);
+            uyelikDegistir.Show();
         }
     }
 }

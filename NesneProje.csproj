@@ -125,6 +125,12 @@
     <Compile Include="standartKullaniciEkrani.Designer.cs">
       <DependentUpon>standartKullaniciEkrani.cs</DependentUpon>
     </Compile>
+    <Compile Include="UyelikDegistir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyelikDegistir.Designer.cs">
+      <DependentUpon>UyelikDegistir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Yonetici.cs" />
     <Compile Include="yoneticiEkrani.cs">
       <SubType>Form</SubType>
@@ -152,6 +158,9 @@
     </Compile>
     <EmbeddedResource Include="standartKullaniciEkrani.resx">
       <DependentUpon>standartKullaniciEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyelikDegistir.resx">
+      <DependentUpon>UyelikDegistir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="yoneticiEkrani.resx">
       <DependentUpon>yoneticiEkrani.cs</DependentUpon>
