@@ -13,12 +13,13 @@ namespace NesneProje
 {
     public partial class premiumKullaniciEkrani : Form
     {
-        private string baglantiString = "Host=localhost;Port=5432;Database=Film Kütüphanesi;user ID=postgres;password=Vipedmap1";
+        private string baglantiString = "server=localhost; port=5432; Database=Film Kütüphanesi; user ID=postgres;" +
+                                                         "password=Vipedmap1";
 
         private string kullaniciAdi;
         private string uyelikDurumu;
 
-        
+
         public premiumKullaniciEkrani(string kullaniciAdi)
         {
             InitializeComponent();
@@ -123,7 +124,7 @@ namespace NesneProje
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string skullaniciAdi = kullaniciAdi ;
+            string skullaniciAdi = kullaniciAdi;
 
             try
             {
@@ -168,5 +169,191 @@ namespace NesneProje
             UyelikDegistir uyelikDegistir = new UyelikDegistir(kullaniciAdi);
             uyelikDegistir.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string filmadi = textBox6.Text.Trim();
+            try
+            {
+                using (var baglanti = new NpgsqlConnection(baglantiString))
+                {
+                    baglanti.Open();
+
+                    string sorgu = "SELECT * FROM filmler WHERE filmadi ILIKE @filmadi";
+
+                    using (var komut = new NpgsqlCommand(sorgu, baglanti))
+                    {
+                        komut.Parameters.AddWithValue("@filmadi", "%" + filmadi + "%");
+
+                        using (var adapter = new NpgsqlDataAdapter(komut))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+
+                            if (dt.Rows.Count > 0)
+                            {
+                                dataGridView1.DataSource = dt;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Aradığınız film bulunamadı.");
+                                dataGridView1.DataSource = null;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hata: {ex.Message}");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string filmadi = textBox6.Text.Trim();
+
+            if (!string.IsNullOrEmpty(filmadi))
+            {
+                FilmAraVeGoster(filmadi);
+            }
+            else
+            {
+                MessageBox.Show("Lütfen film adını giriniz.");
+            }
+        }
+        private void FilmAraVeGoster(string filmadi)
+        {
+            try
+            {
+                using (var baglanti = new NpgsqlConnection(baglantiString))
+                {
+                    baglanti.Open();
+
+                    string sorgu = "SELECT * FROM filmler WHERE filmadi ILIKE @filmadi";
+
+                    using (var komut = new NpgsqlCommand(sorgu, baglanti))
+                    {
+                        komut.Parameters.AddWithValue("@filmadi", "%" + filmadi + "%");
+
+                        using (var adapter = new NpgsqlDataAdapter(komut))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+
+                            if (dt.Rows.Count > 0)
+                            {
+                                dataGridView2.DataSource = dt;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Aradığınız film bulunamadı.");
+                                dataGridView2.DataSource = null;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hata: {ex.Message}");
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage3;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string filmadi = textBox7.Text.Trim();
+            string degerlendirmePuaniStr = textBox8.Text.Trim();
+
+            if (string.IsNullOrEmpty(filmadi) || string.IsNullOrEmpty(degerlendirmePuaniStr))
+            {
+                MessageBox.Show("Lütfen film adını ve değerlendirme puanını giriniz.");
+                return;
+            }
+
+            if (!double.TryParse(degerlendirmePuaniStr, out double degerlendirmePuani))
+            {
+                MessageBox.Show("Geçerli bir değerlendirme puanı giriniz.");
+                return;
+            }
+
+            try
+            {
+                using (var baglanti = new NpgsqlConnection(baglantiString))
+                {
+                    baglanti.Open();
+
+                    // Film tablosundaki değerlendirmepuani sütununu güncelle
+                    string guncelleSorgu = "UPDATE filmler SET degerlendirmepuani = @degerlendirmePuani WHERE filmadi ILIKE @filmAdi";
+
+                    using (var guncelleKomut = new NpgsqlCommand(guncelleSorgu, baglanti))
+                    {
+                        guncelleKomut.Parameters.AddWithValue("@degerlendirmePuani", degerlendirmePuani);
+                        guncelleKomut.Parameters.AddWithValue("@filmAdi", "%" + filmadi + "%");
+
+                        int etkilenenSatirSayisi = guncelleKomut.ExecuteNonQuery();
+
+                        if (etkilenenSatirSayisi > 0)
+                        {
+                            MessageBox.Show("Değerlendirme başarıyla eklendi.");
+                            // DataGridView'e güncellenmiş verileri yükle
+                            FilmAraVeGoster2(filmadi);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Belirtilen film adı bulunamadı veya bir hata oluştu.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hata: {ex.Message}");
+            }
+        }
+        private void FilmAraVeGoster2(string filmAdi)
+        {
+            try
+            {
+                using (var baglanti = new NpgsqlConnection(baglantiString))
+                {
+                    baglanti.Open();
+
+                    string sorgu = "SELECT * FROM filmler WHERE filmadi ILIKE @filmadi";
+
+                    using (var komut = new NpgsqlCommand(sorgu, baglanti))
+                    {
+                        komut.Parameters.AddWithValue("@filmadi", "%" + filmAdi + "%");
+
+                        using (var adapter = new NpgsqlDataAdapter(komut))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+
+                            if (dt.Rows.Count > 0)
+                            {
+                                dataGridView3.DataSource = dt;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Aradığınız film bulunamadı.");
+                                dataGridView3.DataSource = null;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hata: {ex.Message}");
+            }
+        }
+
     }
+
 }

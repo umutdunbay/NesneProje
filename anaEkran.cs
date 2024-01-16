@@ -26,13 +26,13 @@ namespace NesneProje
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
             DataSet ds = new DataSet();
             da.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+            
 
             string sorgu2 = "select * from yoneticiler";
             NpgsqlDataAdapter da2 = new NpgsqlDataAdapter(sorgu2, baglanti);
             DataSet ds2 = new DataSet();
             da2.Fill(ds2);
-            dataGridView2.DataSource = ds2.Tables[0];
+            
         }
 
        
@@ -41,8 +41,7 @@ namespace NesneProje
         {
             tabControl1.SelectedTab = tabPage1;
         }
-        NpgsqlConnection baglanti = new NpgsqlConnection("server=localHost; port=5432; Database=Film Kütüphanesi; user ID=postgres;" +
-                                                         "password=Vipedmap1");
+        NpgsqlConnection baglanti = new NpgsqlConnection("server = localhost; port=5432; Database=Film Kütüphanesi; user ID = postgres;password=Vipedmap1");
         private void kullaniciEkraniBtn_Click(object sender, EventArgs e)
         {
 
@@ -81,7 +80,7 @@ namespace NesneProje
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
-                dataGridView1.DataSource = ds.Tables[0];
+                
 
                 textBox1.Clear();
                 textBox2.Clear();
@@ -117,7 +116,7 @@ namespace NesneProje
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
-                dataGridView1.DataSource = ds.Tables[0];
+               
 
                 textBox1.Clear();
                 textBox2.Clear();
@@ -162,7 +161,7 @@ namespace NesneProje
             NpgsqlDataAdapter da2 = new NpgsqlDataAdapter(sorgu2, baglanti);
             DataSet ds2 = new DataSet();
             da2.Fill(ds2);
-            dataGridView2.DataSource = ds2.Tables[0];
+            
 
             textBox13.Clear();
             textBox14.Clear();

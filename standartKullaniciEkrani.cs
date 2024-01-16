@@ -14,7 +14,7 @@ namespace NesneProje
     public partial class standartKullaniciEkrani : Form
     {
         
-        private string baglantiString = "Host=localhost;Port=5432;Database=Film Kütüphanesi;user ID=postgres;password=Vipedmap1";
+        private string baglantiString = "server = localhost; port=5432; Database=Film Kütüphanesi; user ID = postgres;password=Vipedmap1";
 
         private string kullaniciAdi;
         private string uyelikDurumu;
@@ -101,11 +101,6 @@ namespace NesneProje
             tabControl1.SelectedTab = tabPage2;
         }
 
-        private void bilgiGuncelleBtn_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void bilgiGuncelleBtn_Click_1(object sender, EventArgs e)
         {
             BilgiGuncelleme bilgiGuncellemeForm = new BilgiGuncelleme(kullaniciAdi);
@@ -164,5 +159,101 @@ namespace NesneProje
             UyelikDegistir uyelikDegistir = new UyelikDegistir(kullaniciAdi);
             uyelikDegistir.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string filmadi = textBox6.Text.Trim();
+
+            if (!string.IsNullOrEmpty(filmadi))
+            {
+                FilmAraVeGoster(filmadi);
+            }
+            else
+            {
+                MessageBox.Show("Lütfen film adını giriniz.");
+            }
+        }
+        private void FilmAraVeGoster(string filmadi)
+        {
+            try
+            {
+                using (var baglanti = new NpgsqlConnection(baglantiString))
+                {
+                    baglanti.Open();
+
+                    string sorgu = "SELECT * FROM filmler WHERE filmadi ILIKE @filmadi";
+
+                    using (var komut = new NpgsqlCommand(sorgu, baglanti))
+                    {
+                        komut.Parameters.AddWithValue("@filmadi", "%" + filmadi + "%");
+
+                        using (var adapter = new NpgsqlDataAdapter(komut))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+
+                            if (dt.Rows.Count > 0)
+                            {
+                                dataGridView2.DataSource = dt;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Aradığınız film bulunamadı.");
+                                dataGridView2.DataSource = null;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hata: {ex.Message}");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string filmadi = textBox6.Text.Trim();
+            try
+            {
+                using (var baglanti = new NpgsqlConnection(baglantiString))
+                {
+                    baglanti.Open();
+
+                    string sorgu = "SELECT * FROM filmler WHERE filmadi ILIKE @filmadi";
+
+                    using (var komut = new NpgsqlCommand(sorgu, baglanti))
+                    {
+                        komut.Parameters.AddWithValue("@filmadi", "%" + filmadi + "%");
+
+                        using (var adapter = new NpgsqlDataAdapter(komut))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+
+                            if (dt.Rows.Count > 0)
+                            {
+                                dataGridView1.DataSource = dt;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Aradığınız film bulunamadı.");
+                                dataGridView1.DataSource = null;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hata: {ex.Message}");
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage4;
+        }
+
     }
 }

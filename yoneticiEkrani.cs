@@ -50,8 +50,7 @@ namespace NesneProje
         {
             tabControl1.SelectedTab = tabPage3;
         }
-        NpgsqlConnection baglanti = new NpgsqlConnection("server=localhost; port=5432; Database=Film Kütüphanesi; user ID=postgres;" +
-                                                         "password=Vipedmap1");
+        NpgsqlConnection baglanti = new NpgsqlConnection("server = localhost; port=5432; Database=Film Kütüphanesi; user ID = postgres;password=Vipedmap1");
         public class Filmler
         {
             public string filmadi { get; set; }

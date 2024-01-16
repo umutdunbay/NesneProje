@@ -148,7 +148,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "BilgiGuncelleme";
-            this.Text = "GeciciForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Bilgi Güncelleme";
             this.Load += new System.EventHandler(this.BilgiGuncelleme_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

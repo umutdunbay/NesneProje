@@ -29,7 +29,7 @@ namespace NesneProje
             try
             {
                 // Veritabanı bağlantısı
-                string baglantiString = "Host=localhost;Port=5432;Database=Film Kütüphanesi;user ID=postgres;password=Vipedmap1";
+                string baglantiString = "server = localhost; port=5432; Database=Film Kütüphanesi; user ID = postgres;password=Vipedmap1";
 
                 using (NpgsqlConnection baglanti = new NpgsqlConnection(baglantiString))
                 {
@@ -105,41 +105,8 @@ namespace NesneProje
 
                 // Yeni uyelikturu'yu veritabanına kaydet
                 UpdateUyelikTuruInDatabase(ykullaniciAdi, yeniUyelikTuru);
-
-                if (mevcutUyelikTuru == "Standart")
-                {
-                   
-
-                    anaEkran anaEkran = new anaEkran();
-                    anaEkran.Show();
-
-                    this.Hide();
-                }
-                else if (mevcutUyelikTuru == "Premium")
-                {
-                    premiumKullaniciEkrani pre = new premiumKullaniciEkrani(kullaniciAdi);
-                    pre.Close();
-
-                    anaEkran anaEkran = new anaEkran();
-                    anaEkran.Show();
-
-                    this.Hide();
-                }
-
-
-                
-
-                
-
-               
-
-               
-
-               
                 // Şu anki formu kapat
                 this.Hide();
-                
-
             }
             // Kullanıcı İptal butonuna bastıysa
             else if (result == DialogResult.Cancel)

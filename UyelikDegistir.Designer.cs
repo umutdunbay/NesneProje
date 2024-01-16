@@ -140,7 +140,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UyelikDegistir";
-            this.Text = "UyelikDegistir";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Üyelik Değiştir";
             this.Load += new System.EventHandler(this.UyelikDegistir_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -14,7 +14,7 @@ namespace NesneProje
 {
     public partial class BilgiGuncelleme : Form
     {
-        private string baglantiString = "Host=localhost;Port=5432;Database=Film Kütüphanesi;user ID=postgres;password=Vipedmap1";
+        private string baglantiString = "server = localhost; port=5432; Database=Film Kütüphanesi; user ID = postgres;password=Vipedmap1";
 
         string kAdi;
 
