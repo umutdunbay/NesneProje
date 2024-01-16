@@ -108,6 +108,12 @@
     <Compile Include="BilgiGuncelleme.Designer.cs">
       <DependentUpon>BilgiGuncelleme.cs</DependentUpon>
     </Compile>
+    <Compile Include="istatistikGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="istatistikGoruntule.Designer.cs">
+      <DependentUpon>istatistikGoruntule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kullanicilar.cs" />
     <Compile Include="PremiumKullanici.cs" />
     <Compile Include="premiumKullaniciEkrani.cs">
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BilgiGuncelleme.resx">
       <DependentUpon>BilgiGuncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="istatistikGoruntule.resx">
+      <DependentUpon>istatistikGoruntule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="premiumKullaniciEkrani.resx">
       <DependentUpon>premiumKullaniciEkrani.cs</DependentUpon>

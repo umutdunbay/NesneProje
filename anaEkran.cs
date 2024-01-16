@@ -54,82 +54,88 @@ namespace NesneProje
 
 
             Kullanicilar kullanici;
-
-            if (radioButton3.Checked)
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || comboBox1.SelectedItem.ToString() == "")
             {
-                kullanici = new StandartKullanici(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, Convert.ToDateTime(textBox6.Text), comboBox1.SelectedItem.ToString(), "Standart");
-
-                baglanti.Open();
-                NpgsqlCommand komut1 = new NpgsqlCommand("insert into kullanicilar (kullaniciadi, sifre, isim, soyisim,tcno, dogumtarihi," +
-                                                        " cinsiyet, uyelikturu) values (@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8)", baglanti);
-
-
-                komut1.Parameters.AddWithValue("@p1", kullanici.kullaniciAdi);
-                komut1.Parameters.AddWithValue("@p2", kullanici.sifre);
-                komut1.Parameters.AddWithValue("@p3", kullanici.ad);
-                komut1.Parameters.AddWithValue("@p4", kullanici.soyAd);
-                komut1.Parameters.AddWithValue("@p5", kullanici.tcNo);
-                komut1.Parameters.AddWithValue("@p6", kullanici.dogumTarihi);
-                komut1.Parameters.AddWithValue("@p7", kullanici.cinsiyet);
-                komut1.Parameters.AddWithValue("@p8", kullanici.uyelikTuru);
-                komut1.ExecuteNonQuery();
-                baglanti.Close();
-                MessageBox.Show("Kullanıcı Ekleme İşlemi Başarılı");
-
-                string sorgu = "select * from kullanicilar";
-                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                
-
-                textBox1.Clear();
-                textBox2.Clear();
-                textBox3.Clear();
-                textBox4.Clear();
-                textBox5.Clear();
-                textBox6.Clear();
-                comboBox1.SelectedItem = null;
-                radioButton3.Checked = false; 
-            }
-            else if (radioButton4.Checked)
-            {
-                kullanici = new PremiumKullanici(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, Convert.ToDateTime(textBox6.Text), comboBox1.SelectedItem.ToString(), "Premium");
-
-                baglanti.Open();
-                NpgsqlCommand komut1 = new NpgsqlCommand("insert into kullanicilar (kullaniciadi, sifre, isim, soyisim,tcno, dogumtarihi," +
-                                                        " cinsiyet, uyelikturu) values (@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8)", baglanti);
-
-
-                komut1.Parameters.AddWithValue("@p1", kullanici.kullaniciAdi);
-                komut1.Parameters.AddWithValue("@p2", kullanici.sifre);
-                komut1.Parameters.AddWithValue("@p3", kullanici.ad);
-                komut1.Parameters.AddWithValue("@p4", kullanici.soyAd);
-                komut1.Parameters.AddWithValue("@p5", kullanici.tcNo);
-                komut1.Parameters.AddWithValue("@p6", kullanici.dogumTarihi);
-                komut1.Parameters.AddWithValue("@p7", kullanici.cinsiyet);
-                komut1.Parameters.AddWithValue("@p8", kullanici.uyelikTuru);
-                komut1.ExecuteNonQuery();
-                baglanti.Close();
-                MessageBox.Show("Kullanıcı Ekleme İşlemi Başarılı");
-
-                string sorgu = "select * from kullanicilar";
-                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-               
-
-                textBox1.Clear();
-                textBox2.Clear();
-                textBox3.Clear();
-                textBox4.Clear();
-                textBox5.Clear();
-                textBox6.Clear();
-                comboBox1.SelectedItem = null;
-                radioButton4.Checked = false;
+                MessageBox.Show("Lütfen Tüm Alanları Doldurunuz");
             }
             else
             {
-                MessageBox.Show("Lütfen Kullanıcı Türünü Seçiniz");
+                if (radioButton3.Checked)
+                {
+                    kullanici = new StandartKullanici(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, Convert.ToDateTime(textBox6.Text), comboBox1.SelectedItem.ToString(), "Standart");
+
+                    baglanti.Open();
+                    NpgsqlCommand komut1 = new NpgsqlCommand("insert into kullanicilar (kullaniciadi, sifre, isim, soyisim,tcno, dogumtarihi," +
+                                                            " cinsiyet, uyelikturu) values (@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8)", baglanti);
+
+
+                    komut1.Parameters.AddWithValue("@p1", kullanici.kullaniciAdi);
+                    komut1.Parameters.AddWithValue("@p2", kullanici.sifre);
+                    komut1.Parameters.AddWithValue("@p3", kullanici.ad);
+                    komut1.Parameters.AddWithValue("@p4", kullanici.soyAd);
+                    komut1.Parameters.AddWithValue("@p5", kullanici.tcNo);
+                    komut1.Parameters.AddWithValue("@p6", kullanici.dogumTarihi);
+                    komut1.Parameters.AddWithValue("@p7", kullanici.cinsiyet);
+                    komut1.Parameters.AddWithValue("@p8", kullanici.uyelikTuru);
+                    komut1.ExecuteNonQuery();
+                    baglanti.Close();
+                    MessageBox.Show("Kullanıcı Ekleme İşlemi Başarılı");
+
+                    string sorgu = "select * from kullanicilar";
+                    NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds);
+
+
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
+                    textBox6.Clear();
+                    comboBox1.SelectedItem = null;
+                    radioButton3.Checked = false;
+                }
+                else if (radioButton4.Checked)
+                {
+                    kullanici = new PremiumKullanici(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, Convert.ToDateTime(textBox6.Text), comboBox1.SelectedItem.ToString(), "Premium");
+
+                    baglanti.Open();
+                    NpgsqlCommand komut1 = new NpgsqlCommand("insert into kullanicilar (kullaniciadi, sifre, isim, soyisim,tcno, dogumtarihi," +
+                                                            " cinsiyet, uyelikturu) values (@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8)", baglanti);
+
+
+                    komut1.Parameters.AddWithValue("@p1", kullanici.kullaniciAdi);
+                    komut1.Parameters.AddWithValue("@p2", kullanici.sifre);
+                    komut1.Parameters.AddWithValue("@p3", kullanici.ad);
+                    komut1.Parameters.AddWithValue("@p4", kullanici.soyAd);
+                    komut1.Parameters.AddWithValue("@p5", kullanici.tcNo);
+                    komut1.Parameters.AddWithValue("@p6", kullanici.dogumTarihi);
+                    komut1.Parameters.AddWithValue("@p7", kullanici.cinsiyet);
+                    komut1.Parameters.AddWithValue("@p8", kullanici.uyelikTuru);
+                    komut1.ExecuteNonQuery();
+                    baglanti.Close();
+                    MessageBox.Show("Kullanıcı Ekleme İşlemi Başarılı");
+
+                    string sorgu = "select * from kullanicilar";
+                    NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds);
+
+
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
+                    textBox6.Clear();
+                    comboBox1.SelectedItem = null;
+                    radioButton4.Checked = false;
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen Kullanıcı Türünü Seçiniz");
+                }
             }
         }
 
@@ -141,31 +147,46 @@ namespace NesneProje
             tabControl1.SelectedTab = tabPage3;
         }
 
-     
+
 
         private void yoneticiKayitTamamlaBtn_Click(object sender, EventArgs e)
         {
-            Yonetici yonetici = new Yonetici(textBox13.Text,textBox14.Text);
+            try
+            {
+                // TextBox'ların boş olup olmadığını kontrol et
+                if (string.IsNullOrWhiteSpace(textBox13.Text) || string.IsNullOrWhiteSpace(textBox14.Text))
+                {
+                    MessageBox.Show("Lütfen kullanıcı adı ve şifreyi doldurun.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-            baglanti.Open();
-            NpgsqlCommand komut1 = new NpgsqlCommand("insert into yoneticiler (ykullaniciadi, ysifre) values (@p1,@p2)", baglanti);
+                Yonetici yonetici = new Yonetici(textBox13.Text, textBox14.Text);
 
+                baglanti.Open();
+                NpgsqlCommand komut1 = new NpgsqlCommand("insert into yoneticiler (ykullaniciadi, ysifre) values (@p1, @p2)", baglanti);
 
-            komut1.Parameters.AddWithValue("@p1", yonetici.kullaniciAdi);
-            komut1.Parameters.AddWithValue("@p2", yonetici.sifre);
-            komut1.ExecuteNonQuery();
-            baglanti.Close();
-            MessageBox.Show("Yonetici Ekleme İşlemi Başarılı");
+                komut1.Parameters.AddWithValue("@p1", yonetici.kullaniciAdi);
+                komut1.Parameters.AddWithValue("@p2", yonetici.sifre);
+                komut1.ExecuteNonQuery();
+                baglanti.Close();
 
-            string sorgu2 = "select * from yoneticiler";
-            NpgsqlDataAdapter da2 = new NpgsqlDataAdapter(sorgu2, baglanti);
-            DataSet ds2 = new DataSet();
-            da2.Fill(ds2);
-            
+                MessageBox.Show("Yönetici Ekleme İşlemi Başarılı", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            textBox13.Clear();
-            textBox14.Clear();
+                // Yönetici ekledikten sonra veritabanındaki güncel liste için DataGridView'ı güncelle
+                string sorgu2 = "select * from yoneticiler";
+                NpgsqlDataAdapter da2 = new NpgsqlDataAdapter(sorgu2, baglanti);
+                DataSet ds2 = new DataSet();
+                da2.Fill(ds2);
+
+                textBox13.Clear();
+                textBox14.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void kullaniciGirisBtn_Click(object sender, EventArgs e)
         {
@@ -242,6 +263,7 @@ namespace NesneProje
             {
                 yoneticiEkrani yoneticiForm = new yoneticiEkrani();
                 yoneticiForm.Show();
+                this.Hide();
 
                 
                 anaEkran anaEkranForm = Application.OpenForms["AnaEkran"] as anaEkran;

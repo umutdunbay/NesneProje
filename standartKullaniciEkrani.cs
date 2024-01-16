@@ -81,6 +81,27 @@ namespace NesneProje
                 }
                 linkLabel1.Text = uyelikDurumu;
                 baglanti.Close();
+
+
+                baglanti.Open();
+                string sorgu5 = "select filmadi from filmler";
+                NpgsqlDataAdapter fa = new NpgsqlDataAdapter(sorgu5, baglanti);
+                DataTable dt = new DataTable();
+                fa.Fill(dt);
+                comboBox1.DisplayMember = "filmadi";
+                comboBox1.ValueMember = "filmid";
+                comboBox1.DataSource = dt;
+                baglanti.Close();
+
+                string sorgu3 = "SELECT k.kullaniciadi, f.filmadi, d.degerlendirmepuani, d.yorum " +
+                 "FROM degerlendirmeler d " +
+                 "JOIN kullanicilar k ON d.kullaniciid = k.kullaniciid " +
+                 "JOIN filmler f ON d.filmid = f.filmid";
+                NpgsqlDataAdapter da3 = new NpgsqlDataAdapter(sorgu3, baglanti);
+                DataSet ds3 = new DataSet();
+                da3.Fill(ds3);
+
+                dataGridView3.DataSource = ds3.Tables[0];
             }
         }
 
@@ -252,8 +273,101 @@ namespace NesneProje
 
         private void button5_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tabPage4;
+            try
+            {
+                // PostgreSQL bağlantı nesnesi ve bağlantı bilgileri
+                NpgsqlConnection baglanti = new NpgsqlConnection("Host=localhost;Port=5432;Database=Film Kütüphanesi;Username=postgres;Password=Vipedmap1");
+
+                // Veri çekme sorgusu
+                string sorgu = "SELECT * FROM filmler";
+
+                // DataAdapter ve DataTable oluşturma
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sorgu, baglanti);
+                DataTable dataTable = new DataTable();
+
+                // DataTable'ı doldurma
+                dataAdapter.Fill(dataTable);
+
+                // DataGridView2'ye DataTable'ı ata
+                dataGridView2.DataSource = dataTable;
+
+                // Bağlantıyı kapat
+                baglanti.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message);
+            }
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            istatistikGoruntule ig = new istatistikGoruntule();
+            ig.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // TextBox, NumericUpDown ve ComboBox'tan değerleri al
+            string yorum = textBox7.Text;
+            int degerlendirmePuani = (int)numericUpDown1.Value;
+            DataRowView selectedRow = (DataRowView)comboBox1.SelectedItem;
+            string filmAdi = selectedRow["filmadi"].ToString();
+            string qkullaniciAdi = kullaniciAdi; // Burada kullanıcı adını almanız gerekiyor.
+
+
+            using (var baglanti = new NpgsqlConnection(baglantiString))
+            {
+                // Kullanıcı ID'sini almak için "kullanicilar" tablosunu sorgula
+                baglanti.Open();
+                string kullaniciIdSorgu = "SELECT kullaniciid FROM kullanicilar WHERE kullaniciadi = @kullaniciadi";
+                NpgsqlCommand kullaniciIdKomut = new NpgsqlCommand(kullaniciIdSorgu, baglanti);
+                kullaniciIdKomut.Parameters.AddWithValue("@kullaniciadi", qkullaniciAdi);
+                int kullaniciId = (int)kullaniciIdKomut.ExecuteScalar();
+                baglanti.Close();
+
+                // Film ID'sini almak için "filmler" tablosunu sorgula
+                baglanti.Open();
+                string filmIdSorgu = "SELECT filmid FROM filmler WHERE filmadi = @filmadi";
+                NpgsqlCommand filmIdKomut = new NpgsqlCommand(filmIdSorgu, baglanti);
+                filmIdKomut.Parameters.AddWithValue("@filmadi", filmAdi);
+                int filmId = (int)filmIdKomut.ExecuteScalar();
+                baglanti.Close();
+
+                // "degerlendirmeler" tablosuna ekleme yap
+                baglanti.Open();
+                string degerlendirmeEkleSorgu = "INSERT INTO degerlendirmeler (kullaniciid, filmid, degerlendirmepuani, yorum) VALUES (@kullaniciid, @filmid, @degerlendirmepuani, @yorum)";
+                NpgsqlCommand degerlendirmeEkleKomut = new NpgsqlCommand(degerlendirmeEkleSorgu, baglanti);
+                degerlendirmeEkleKomut.Parameters.AddWithValue("@kullaniciid", kullaniciId);
+                degerlendirmeEkleKomut.Parameters.AddWithValue("@filmid", filmId);
+                degerlendirmeEkleKomut.Parameters.AddWithValue("@degerlendirmepuani", degerlendirmePuani);
+                degerlendirmeEkleKomut.Parameters.AddWithValue("@yorum", yorum);
+                degerlendirmeEkleKomut.ExecuteNonQuery();
+                baglanti.Close();
+
+                MessageBox.Show("Değerlendirme Ekleme İşlemi Başarılı", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Değer ekledikten sonra kullanıcıya geri bildirim göstermek istiyorsanız, mesela TextBox'ı temizleyebilirsiniz.
+                textBox7.Clear();
+                numericUpDown1.Value = 0;
+                comboBox1.SelectedIndex = -1;
+
+                // Yeni değer ekledikten sonra DataGridView'ı güncelle (varsayılan olarak DataGridView1 olarak adlandırılmış)
+                string sorgu3 = "SELECT k.kullaniciadi, f.filmadi, d.degerlendirmepuani, d.yorum " +
+                "FROM degerlendirmeler d " +
+                "JOIN kullanicilar k ON d.kullaniciid = k.kullaniciid " +
+                "JOIN filmler f ON d.filmid = f.filmid";
+                NpgsqlDataAdapter da3 = new NpgsqlDataAdapter(sorgu3, baglanti);
+                DataSet ds3 = new DataSet();
+                da3.Fill(ds3);
+
+                dataGridView3.DataSource = ds3.Tables[0];
+            }    
+        }
     }
 }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(anaEkran));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.yoneticiEkraniBtn = new System.Windows.Forms.Button();
             this.kullaniciEkraniBtn = new System.Windows.Forms.Button();
             this.girisEkraniBtn = new System.Windows.Forms.Button();
@@ -94,9 +95,9 @@
             this.label22 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -107,7 +108,6 @@
             this.groupBox6.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -117,7 +117,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(1, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1235, 638);
@@ -133,17 +133,27 @@
             this.tabPage4.Controls.Add(this.girisEkraniBtn);
             this.tabPage4.Controls.Add(this.label12);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1227, 609);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Ana Ekran";
-
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::NesneProje.Properties.Resources.PATSO_FİLM;
+            this.pictureBox1.Location = new System.Drawing.Point(357, 114);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(505, 310);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // yoneticiEkraniBtn
             // 
             this.yoneticiEkraniBtn.Location = new System.Drawing.Point(921, 526);
-            this.yoneticiEkraniBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.yoneticiEkraniBtn.Margin = new System.Windows.Forms.Padding(4);
             this.yoneticiEkraniBtn.Name = "yoneticiEkraniBtn";
             this.yoneticiEkraniBtn.Size = new System.Drawing.Size(187, 54);
             this.yoneticiEkraniBtn.TabIndex = 3;
@@ -154,7 +164,7 @@
             // kullaniciEkraniBtn
             // 
             this.kullaniciEkraniBtn.Location = new System.Drawing.Point(533, 526);
-            this.kullaniciEkraniBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kullaniciEkraniBtn.Margin = new System.Windows.Forms.Padding(4);
             this.kullaniciEkraniBtn.Name = "kullaniciEkraniBtn";
             this.kullaniciEkraniBtn.Size = new System.Drawing.Size(187, 54);
             this.kullaniciEkraniBtn.TabIndex = 2;
@@ -165,7 +175,7 @@
             // girisEkraniBtn
             // 
             this.girisEkraniBtn.Location = new System.Drawing.Point(179, 526);
-            this.girisEkraniBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.girisEkraniBtn.Margin = new System.Windows.Forms.Padding(4);
             this.girisEkraniBtn.Name = "girisEkraniBtn";
             this.girisEkraniBtn.Size = new System.Drawing.Size(187, 54);
             this.girisEkraniBtn.TabIndex = 1;
@@ -196,13 +206,12 @@
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1227, 609);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Giriş Yap";
-
             // 
             // groupBox5
             // 
@@ -220,7 +229,7 @@
             // yoneticiKayitBtn
             // 
             this.yoneticiKayitBtn.Location = new System.Drawing.Point(88, 26);
-            this.yoneticiKayitBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.yoneticiKayitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.yoneticiKayitBtn.Name = "yoneticiKayitBtn";
             this.yoneticiKayitBtn.Size = new System.Drawing.Size(100, 28);
             this.yoneticiKayitBtn.TabIndex = 19;
@@ -264,7 +273,7 @@
             // kullaniciKayitBtn
             // 
             this.kullaniciKayitBtn.Location = new System.Drawing.Point(89, 27);
-            this.kullaniciKayitBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kullaniciKayitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.kullaniciKayitBtn.Name = "kullaniciKayitBtn";
             this.kullaniciKayitBtn.Size = new System.Drawing.Size(100, 28);
             this.kullaniciKayitBtn.TabIndex = 18;
@@ -311,7 +320,7 @@
             // yoneticiGirisBtn
             // 
             this.yoneticiGirisBtn.Location = new System.Drawing.Point(149, 209);
-            this.yoneticiGirisBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.yoneticiGirisBtn.Margin = new System.Windows.Forms.Padding(4);
             this.yoneticiGirisBtn.Name = "yoneticiGirisBtn";
             this.yoneticiGirisBtn.Size = new System.Drawing.Size(100, 28);
             this.yoneticiGirisBtn.TabIndex = 13;
@@ -322,7 +331,7 @@
             // yoneticiSifreText
             // 
             this.yoneticiSifreText.Location = new System.Drawing.Point(116, 140);
-            this.yoneticiSifreText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.yoneticiSifreText.Margin = new System.Windows.Forms.Padding(4);
             this.yoneticiSifreText.Name = "yoneticiSifreText";
             this.yoneticiSifreText.Size = new System.Drawing.Size(132, 22);
             this.yoneticiSifreText.TabIndex = 10;
@@ -330,7 +339,7 @@
             // yoneticiAdiText
             // 
             this.yoneticiAdiText.Location = new System.Drawing.Point(116, 65);
-            this.yoneticiAdiText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.yoneticiAdiText.Margin = new System.Windows.Forms.Padding(4);
             this.yoneticiAdiText.Name = "yoneticiAdiText";
             this.yoneticiAdiText.Size = new System.Drawing.Size(132, 22);
             this.yoneticiAdiText.TabIndex = 9;
@@ -386,7 +395,7 @@
             // kullaniciGirisBtn
             // 
             this.kullaniciGirisBtn.Location = new System.Drawing.Point(165, 287);
-            this.kullaniciGirisBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kullaniciGirisBtn.Margin = new System.Windows.Forms.Padding(4);
             this.kullaniciGirisBtn.Name = "kullaniciGirisBtn";
             this.kullaniciGirisBtn.Size = new System.Drawing.Size(100, 28);
             this.kullaniciGirisBtn.TabIndex = 12;
@@ -399,9 +408,9 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Location = new System.Drawing.Point(132, 186);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(181, 66);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
@@ -411,7 +420,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(0, 46);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(130, 20);
             this.radioButton2.TabIndex = 1;
@@ -423,7 +432,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(0, 23);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(127, 20);
             this.radioButton1.TabIndex = 0;
@@ -434,7 +443,7 @@
             // kullaniciSifreText
             // 
             this.kullaniciSifreText.Location = new System.Drawing.Point(132, 133);
-            this.kullaniciSifreText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kullaniciSifreText.Margin = new System.Windows.Forms.Padding(4);
             this.kullaniciSifreText.Name = "kullaniciSifreText";
             this.kullaniciSifreText.Size = new System.Drawing.Size(132, 22);
             this.kullaniciSifreText.TabIndex = 8;
@@ -442,7 +451,7 @@
             // kullaniciAdiText
             // 
             this.kullaniciAdiText.Location = new System.Drawing.Point(132, 54);
-            this.kullaniciAdiText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kullaniciAdiText.Margin = new System.Windows.Forms.Padding(4);
             this.kullaniciAdiText.Name = "kullaniciAdiText";
             this.kullaniciAdiText.Size = new System.Drawing.Size(132, 22);
             this.kullaniciAdiText.TabIndex = 7;
@@ -490,7 +499,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(492, 539);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(187, 54);
             this.button5.TabIndex = 23;
@@ -505,9 +514,9 @@
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1227, 609);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Kullanıcı Kayıt Ekranı";
@@ -547,7 +556,7 @@
             "Erkek",
             "Kadın"});
             this.comboBox1.Location = new System.Drawing.Point(793, 209);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(132, 24);
             this.comboBox1.TabIndex = 20;
@@ -556,7 +565,7 @@
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Location = new System.Drawing.Point(793, 311);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(130, 20);
             this.radioButton4.TabIndex = 18;
@@ -568,7 +577,7 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(793, 284);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(127, 20);
             this.radioButton3.TabIndex = 17;
@@ -579,7 +588,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(793, 148);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(132, 22);
             this.textBox6.TabIndex = 15;
@@ -587,7 +596,8 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(793, 75);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox5.MaxLength = 11;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(132, 22);
             this.textBox5.TabIndex = 14;
@@ -595,7 +605,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(264, 288);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(132, 22);
             this.textBox4.TabIndex = 13;
@@ -603,7 +613,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(264, 217);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(132, 22);
             this.textBox3.TabIndex = 12;
@@ -611,15 +621,16 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(264, 152);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(132, 22);
             this.textBox2.TabIndex = 11;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(264, 79);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 10;
@@ -628,7 +639,7 @@
             // 
             this.kullaniciKayitTamamlaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.kullaniciKayitTamamlaBtn.Location = new System.Drawing.Point(419, 380);
-            this.kullaniciKayitTamamlaBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kullaniciKayitTamamlaBtn.Margin = new System.Windows.Forms.Padding(4);
             this.kullaniciKayitTamamlaBtn.Name = "kullaniciKayitTamamlaBtn";
             this.kullaniciKayitTamamlaBtn.Size = new System.Drawing.Size(248, 60);
             this.kullaniciKayitTamamlaBtn.TabIndex = 9;
@@ -727,7 +738,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(920, 538);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(248, 60);
             this.button4.TabIndex = 22;
@@ -738,7 +749,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(56, 538);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(248, 60);
             this.button1.TabIndex = 21;
@@ -754,7 +765,7 @@
             this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1227, 609);
             this.tabPage3.TabIndex = 2;
@@ -778,7 +789,7 @@
             // textBox13
             // 
             this.textBox13.Location = new System.Drawing.Point(280, 117);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(4);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(239, 22);
             this.textBox13.TabIndex = 20;
@@ -786,15 +797,16 @@
             // textBox14
             // 
             this.textBox14.Location = new System.Drawing.Point(280, 160);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox14.Margin = new System.Windows.Forms.Padding(4);
             this.textBox14.Name = "textBox14";
+            this.textBox14.PasswordChar = '*';
             this.textBox14.Size = new System.Drawing.Size(239, 22);
             this.textBox14.TabIndex = 19;
             // 
             // yoneticiKayitTamamlaBtn
             // 
             this.yoneticiKayitTamamlaBtn.Location = new System.Drawing.Point(292, 262);
-            this.yoneticiKayitTamamlaBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.yoneticiKayitTamamlaBtn.Margin = new System.Windows.Forms.Padding(4);
             this.yoneticiKayitTamamlaBtn.Name = "yoneticiKayitTamamlaBtn";
             this.yoneticiKayitTamamlaBtn.Size = new System.Drawing.Size(215, 42);
             this.yoneticiKayitTamamlaBtn.TabIndex = 18;
@@ -812,7 +824,6 @@
             this.label21.Size = new System.Drawing.Size(67, 26);
             this.label21.TabIndex = 17;
             this.label21.Text = "Şifre:";
-
             // 
             // label22
             // 
@@ -828,7 +839,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(753, 539);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(187, 54);
             this.button3.TabIndex = 27;
@@ -839,24 +850,13 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(197, 539);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(187, 54);
             this.button2.TabIndex = 26;
             this.button2.Text = "Giriş Yap Ekranı";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::NesneProje.Properties.Resources.PATSO_FİLM;
-            this.pictureBox1.Location = new System.Drawing.Point(357, 114);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(505, 310);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // anaEkran
             // 
@@ -866,7 +866,8 @@
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "anaEkran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Patso Film";
@@ -874,6 +875,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -891,7 +893,6 @@
             this.tabPage3.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
